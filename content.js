@@ -11,10 +11,21 @@
    * Le label est dans un <dt> qui contient le texte "Wanted Articles".
    * La valeur est dans le <dd> qui suit immédiatement.
    */
+  // Labels for the "wanted articles" row in all Cardmarket languages
+  const WANTED_LABELS = [
+    "Wanted Articles",    // EN
+    "Articles recherchés", // FR
+    "Gesuchte Artikel",   // DE
+    "Artículos buscados", // ES
+    "Articoli cercati",   // IT
+    "Gezochte artikelen", // NL
+  ];
+
   function getWantedArticles(card) {
     const dts = card.querySelectorAll("dl.row dt");
     for (const dt of dts) {
-      if (dt.textContent.includes("Wanted Articles")) {
+      const text = dt.textContent.trim();
+      if (WANTED_LABELS.some(label => text.includes(label))) {
         const dd = dt.nextElementSibling;
         if (dd) {
           const val = parseInt(dd.textContent.trim(), 10);
