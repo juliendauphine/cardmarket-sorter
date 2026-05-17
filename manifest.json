@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Cardmarket Shopping Wizard Sorter",
+  "version": "1.0",
+  "description": "Trie les blocs vendeurs du Shopping Wizard par nombre de cartes (décroissant)",
+  "icons": {
+    "48": "icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.cardmarket.com/*/Wants/ShoppingWizard/Results*"
+      ],
+      "js": ["content.js"],
+      "css": ["sorter.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": []
+}

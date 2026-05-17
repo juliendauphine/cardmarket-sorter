@@ -1,0 +1,63 @@
+/* ── Bouton de tri ─────────────────────────────────────────────────────────── */
+#cm-sorter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 16px 0;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #0247ca;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 2px 6px rgba(2, 71, 202, 0.35);
+}
+
+#cm-sorter-btn:hover {
+  background: #0339a0;
+  transform: translateY(-1px);
+}
+
+#cm-sorter-btn:active {
+  transform: translateY(0);
+}
+
+#cm-sorter-btn[data-state="desc"]::after {
+  content: " ▼";
+  font-size: 11px;
+}
+
+#cm-sorter-btn[data-state="asc"]::after {
+  content: " ▲";
+  font-size: 11px;
+}
+
+/* ── Badges de comptage ────────────────────────────────────────────────────── */
+.cm-sorter-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  margin-bottom: 6px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.cm-badge-high {
+  background: #198754;
+  color: #fff;
+}
+
+.cm-badge-med {
+  background: #fd7e14;
+  color: #fff;
+}
+
+.cm-badge-low {
+  background: #6c757d;
+  color: #fff;
+}
